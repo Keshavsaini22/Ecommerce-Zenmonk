@@ -4,11 +4,14 @@ import HomePage from '../../Pages/HomePage/HomePage'
 import LoginSignup from '../../Pages/LoginSignUp/LoginSignup'
 import Cart from '../../Pages/Cart/Cart'
 import Shop from '../../Pages/Shop'
+import Navbar from '../Navbar/Navbar'
 
 
 function AllRoutes() {
   return (
-    <Routes>        
+    <>
+    <Navbar/>
+    <Routes> 
         <Route path='/' element={<HomePage/>}/>
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/men' element={<HomePage/>}/>
@@ -17,6 +20,7 @@ function AllRoutes() {
         <Route path='/login' element={<LoginSignup/>}/>
         <Route path='/cart' element={<Cart/>}/>
     </Routes>
+    </>
   )
 }
 

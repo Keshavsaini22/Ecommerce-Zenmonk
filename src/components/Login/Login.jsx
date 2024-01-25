@@ -7,11 +7,12 @@ import { ReactComponent as Apple } from '../Assets/Kicks/ic_baseline-apple.svg'
 import { ReactComponent as Facebook } from '../Assets/Kicks/logos_facebook.svg'
 
 import { ReactComponent as ArrowFor } from '../Assets/Kicks/arrow_forward.svg'
+import { NavLink } from 'react-router-dom'
 function Login() {
     return (
         <div className="container">
             <div id='log-for'>
-                <div className="log">Login</div>
+                <div className="log">Login / <NavLink to={'/signup'}>SignUp</NavLink></div>
                 <div className="forget">Forget your password?</div>
             </div>
 

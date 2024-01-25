@@ -19,7 +19,7 @@ function JoinKicksClub() {
                 </div>
                 <div className="line-2">Join now to start earning points, reach new levels and unlock more rewards and benefits from adiClub.​</div>
             </div>
-            <div className="btn-container">
+            <div className="btn-container-joinclub">
                 <div className="btn-txt">JOIN THE CLUB</div>
                 <ArrowFor className='arrow' />
             </div>

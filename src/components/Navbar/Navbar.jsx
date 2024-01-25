@@ -18,7 +18,7 @@ function Navbar() {
         <li ><NavLink to={"/kids"}>Kids </NavLink></li>
       </ul>
       <div className="nav-login-cart">
-        <button ><NavLink to={"/login"}>Login</NavLink></button>
+      <NavLink to={"/login"}> <button >Login</button></NavLink>
         <img src={cart_icon} alt="Cart"  />
         <div className="nav-cart-count">000</div>
       </div>

@@ -25,6 +25,9 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+        a{
+            color: var(--Dark-Gray, #232321);
+        }
     }
 
     .forget {

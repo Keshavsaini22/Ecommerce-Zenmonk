@@ -8,7 +8,7 @@ function LoginSignup() {
   return (
     <>
    
-    <SignUp/>
+   
     <div className="hero-container">
     <Login/>
     <JoinKicksClub/>

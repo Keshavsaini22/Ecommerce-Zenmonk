@@ -20,7 +20,7 @@ function Navbar() {
       <div className="nav-login-cart">
       <NavLink to={"/login"}> <button >Login</button></NavLink>
         <img src={cart_icon} alt="Cart"  />
-        <div className="nav-cart-count">000</div>
+        <div className="nav-cart-count">0</div>
       </div>
     </div>
   )

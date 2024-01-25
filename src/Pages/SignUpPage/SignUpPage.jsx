@@ -4,6 +4,8 @@ import JoinKicksClub from '../../components/JoinKicksClub/JoinKicksClub'
 
 import './SignUpPage.css'
 function SignUpPage() {
+  
+
   return (
     <div className="main-section">
          <SignUp/>

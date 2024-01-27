@@ -1,0 +1,53 @@
+.dontmiss {
+    /* background-color: yellowgreen; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 32px;
+    .uppersection {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-self: stretch;
+
+        .left {
+            width: 589px;
+            color: var(--Dark-Gray, #232321);
+            font-family: 'Rubik';
+            font-size: 74px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 95%;
+            /* 70.3px */
+            text-transform: uppercase;
+        }
+
+        button {
+            display: flex;
+            height: 48px;
+            padding: 8px 32px;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            align-self: stretch;
+            border: none;
+            border-radius: 8px;
+            background: var(--Blue, #4A69E2);
+            color: var(--White, #FFF);
+            font-family: 'Rubik';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.25px;
+            text-transform: uppercase;
+        }
+    }
+    lowersection{
+        display: flex;
+        /* width: 318px; */
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;    }
+}

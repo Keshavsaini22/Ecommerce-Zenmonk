@@ -1,0 +1,67 @@
+.tag-line{
+    color: var(--Dark-Gray, #232321);
+font-family: 'Rubik';
+font-size: 223.5px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: uppercase;
+span{
+    color: var(--Blue, #4A69E2);
+
+}
+}
+
+.nikeairsection {
+    padding: 48px;
+    justify-content: space-between;
+
+    .line1 {
+        color: var(--White, #FFF);
+        font-family: 'Rubik';
+        font-size: 74px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 0px;
+    }
+
+    .line2 {
+        color: var(--Gray, #E7E7E3);
+        width: 490px;
+        /* Open Sans/Semibold/24px */
+        font-family: "Open Sans";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-bottom: 24px;
+    }
+
+    button {
+        display: flex;
+        height: 48px;
+        padding: 8px 32px;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        align-self: stretch;
+        color: var(--Pure-White, #FFF);
+        font-family: 'Rubik';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.25px;
+        text-transform: uppercase;
+        border-radius: 8px;
+        border: none;
+        background: var(--Blue, #4A69E2);
+    }
+
+    .right {
+        div {
+            margin: 8px;
+        }
+    }
+}

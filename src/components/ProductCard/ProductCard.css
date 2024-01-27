@@ -1,5 +1,6 @@
 .main-card {
-    display: flex;
+    display: inline-flex;
+    margin: 8px;
     width: 318px;
     flex-direction: column;
     align-items: center;

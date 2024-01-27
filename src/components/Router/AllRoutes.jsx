@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import LandingPage from '../../Pages/LandingPage/LandingPage'
 import HomePage from '../../Pages/HomePage/HomePage'
+
 import LoginSignup from '../../Pages/LoginSignUp/LoginSignup'
 import Cart from '../../Pages/Cart/Cart'
 import SignUpPage from '../../Pages/SignUpPage/SignUpPage'
-
-import Shop from '../../Pages/Shop'
 import Navbar from '../Navbar/Navbar'
 
 
@@ -14,8 +14,10 @@ function AllRoutes() {
     <>
     <Navbar/>
     <Routes> 
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/shop' element={<Shop/>}/>
+        <Route path='/' element={<LandingPage/>}/>
+        {/* <Route path='land' */}
+        <Route path='/landing' element={<LandingPage/>}/>
+
         <Route path='/men' element={<HomePage/>}/>
         <Route path='/women' element={<HomePage/>}/>
         <Route path='/kids' element={<HomePage/>}/>

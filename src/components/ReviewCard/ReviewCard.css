@@ -1,0 +1,92 @@
+.reviewcard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+
+    .upper {
+        display: flex;
+        max-width: 365px;
+        padding: 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        border-radius: 32px 32px 0px 0px;
+        background: #FAFAFA;
+
+        .upper-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+
+            .left {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                flex: 1 0 0;
+
+                .bolder {
+                    color: var(--Dark-Gray, #232321);
+
+                    /* Rubik/24px */
+                    font-family: 'Rubik';
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+
+                .lightcomment {
+                    color: var(--Dark-Gray, #232321);
+
+                    /* Open Sans/Regular/16px */
+                    font-family: "Open Sans";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+
+        }
+
+        .upper-bottom {
+            display: flex;
+            align-items: center;
+
+            .txt {
+                color: var(--Dark-Gray, #232321);
+
+                /* Open Sans/Semibold/16px */
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .lowerr {
+        /* display: flex; */
+        height: 325px;
+        max-width: 429px;
+        /* padding-right: 0.333px; */
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+
+        /* background-color: #232321; */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0px 0px 32px 32px;
+        }
+    }
+
+
+}

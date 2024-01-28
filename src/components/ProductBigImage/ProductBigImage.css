@@ -1,0 +1,49 @@
+.bigimage {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+    .bigimagetop {
+        display: flex;
+        gap: 16px;
+
+        .topleft {
+            max-width: 429px;
+            height: 510px;
+            flex-shrink: 1;
+            border-radius: 48px 0px 0px 0px;
+        }
+
+        .topright {
+            max-width: 429px;
+            flex-shrink: 1;
+
+            height: 510px;
+            border-radius: 0px 48px 0px 0px;
+
+        }
+    }
+
+    .bigimagebottom {
+        display: flex;
+        gap: 16px;
+
+        .bottomleft {
+            max-width: 429px;
+            height: 510px;
+            flex-shrink: 1;
+
+            border-radius: 0px 0px 0px 48px;
+
+        }
+
+        .bottomright {
+            max-width: 429px;
+            flex-shrink: 1;
+
+            height: 510px;
+            border-radius: 0px 0px 48px 0px;
+
+        }
+    }
+}

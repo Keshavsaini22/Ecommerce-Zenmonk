@@ -5,13 +5,19 @@ import React from 'react'
 // import { ReactComponent as MainImg } from '../../components/Assets/Kicks/LandingPage/landing-page1.png'
 import NikeAirSection from '../../components/NikeAirSection/NikeAirSection'
 import LandingPageDontMiss from '../../components/LandingPageDontMiss/LandingPageDontMiss'
+import LandingCategories from '../../components/LandingCategories/LandingCategories'
+import LandingReviews from '../../components/LandingReviews/LandingReviews'
+import ProductBigImage from '../../components/ProductBigImage/ProductBigImage'
 
 
 function LandingPage() {
   return (
     <div className="landing-section">
-      {/* <NikeAirSection/> */}
-      {/* <LandingPageDontMiss /> */}
+      {/* <NikeAirSection/>
+      <LandingPageDontMiss /> */}
+      {/* <LandingCategories/> */}
+      {/* <LandingReviews/> */}
+      <ProductBigImage/>
     </div>
   )
 }

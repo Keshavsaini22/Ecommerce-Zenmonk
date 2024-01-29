@@ -8,6 +8,7 @@ import LandingPageDontMiss from '../../components/LandingPageDontMiss/LandingPag
 import LandingCategories from '../../components/LandingCategories/LandingCategories'
 import LandingReviews from '../../components/LandingReviews/LandingReviews'
 import ProductBigImage from '../../components/ProductBigImage/ProductBigImage'
+import ProductPageBuyOption from '../../components/ProductPageBuyOption/ProductPageBuyOption'
 
 
 function LandingPage() {
@@ -17,7 +18,8 @@ function LandingPage() {
       <LandingPageDontMiss /> */}
       {/* <LandingCategories/> */}
       {/* <LandingReviews/> */}
-      <ProductBigImage/>
+      {/* <ProductBigImage/> */}
+      <ProductPageBuyOption/>
     </div>
   )
 }

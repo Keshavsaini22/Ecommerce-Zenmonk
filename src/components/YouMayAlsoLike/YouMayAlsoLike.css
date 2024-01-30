@@ -1,0 +1,50 @@
+.youmaysection {
+    display: flex;
+    max-width: 1320px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    .upper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+
+        .left {
+            color: var(--Dark-Gray, #232321);
+
+            /* Rubik/48px */
+            font-family: 'Rubik';
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            div {
+                color: white;
+                border-radius: 8px;
+                background: var(--Dark-Gray, #232321);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                width: 40px;
+                height: 40px;
+
+              
+            }
+            .btn1 {
+                background-color: #858582
+            }
+        }
+
+    }
+}

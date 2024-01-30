@@ -31,10 +31,10 @@ function NikeAirSection() {
         background: `url(${img3}), lightgray 50% / cover no-repeat`,
     };
     return (
-        <>
+        <div className='nikeairsection'>
             <div className="tag-line">DO IT <span>RIGHT</span></div>
 
-            <div style={containerStyle} className='nikeairsection'>
+            <div style={containerStyle} className='nikeaircontainer'>
                 <div className="left">
                     <div className="line1">NIKE AIR MAX</div>
                     <div className="line2">Nike introducing the new air max for everyone's comfort</div>
@@ -45,7 +45,7 @@ function NikeAirSection() {
                     <div style={imgRight2}></div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

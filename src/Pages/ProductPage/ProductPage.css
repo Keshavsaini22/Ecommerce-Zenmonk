@@ -1,0 +1,11 @@
+.productpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    .upper{
+        display: flex;
+        gap: 16px;
+    }
+}

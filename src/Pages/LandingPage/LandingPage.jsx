@@ -9,17 +9,17 @@ import LandingCategories from '../../components/LandingCategories/LandingCategor
 import LandingReviews from '../../components/LandingReviews/LandingReviews'
 import ProductBigImage from '../../components/ProductBigImage/ProductBigImage'
 import ProductPageBuyOption from '../../components/ProductPageBuyOption/ProductPageBuyOption'
-
+import YouMayAlsoLike from '../../components/YouMayAlsoLike/YouMayAlsoLike'
+import './LandingPage.css'
 
 function LandingPage() {
   return (
-    <div className="landing-section">
-      {/* <NikeAirSection/>
-      <LandingPageDontMiss /> */}
-      {/* <LandingCategories/> */}
-      {/* <LandingReviews/> */}
-      {/* <ProductBigImage/> */}
-      <ProductPageBuyOption/>
+    <div className="landing-sectionn">
+      <NikeAirSection className='nike-section'/>
+      <LandingPageDontMiss className='dontmiss-section'/>
+      <LandingCategories className='categories-section'/>
+      <LandingReviews className='reviews-section'/>
+      
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import LandingPage from '../../Pages/LandingPage/LandingPage'
-import HomePage from '../../Pages/HomePage/HomePage'
+import ProductPage from '../../Pages/ProductPage/ProductPage'
 
 import LoginSignup from '../../Pages/LoginSignUp/LoginSignup'
 import Cart from '../../Pages/Cart/Cart'
@@ -17,10 +17,11 @@ function AllRoutes() {
         <Route path='/' element={<LandingPage/>}/>
         {/* <Route path='land' */}
         <Route path='/landing' element={<LandingPage/>}/>
+        <Route path='/product' element={<ProductPage/>}/>
 
-        <Route path='/men' element={<HomePage/>}/>
-        <Route path='/women' element={<HomePage/>}/>
-        <Route path='/kids' element={<HomePage/>}/>
+        <Route path='/men' element={<LandingPage/>}/>
+        <Route path='/women' element={<LandingPage/>}/>
+        <Route path='/kids' element={<LandingPage/>}/>
         <Route path='/signup' element={<SignUpPage/>}/>
 
         <Route path='/login' element={<LoginSignup/>}/>

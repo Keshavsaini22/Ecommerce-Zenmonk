@@ -14,7 +14,7 @@ function ProductPageBuyOption() {
             <div className="colors">
                 <div className="color">Color</div>
                 <div className="colors-bt ">
-                    <input type="radio" className='black' name="" id="" />
+                    <input type="radio" className='black' name="" id="" style={{accentColor:"red"}} />
                     <input type="radio" className='gray' name="" id="" />
                 </div>
             </div>

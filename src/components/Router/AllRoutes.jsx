@@ -7,6 +7,7 @@ import LoginSignup from '../../Pages/LoginSignUp/LoginSignup'
 import Cart from '../../Pages/Cart/Cart'
 import SignUpPage from '../../Pages/SignUpPage/SignUpPage'
 import Navbar from '../Navbar/Navbar'
+import ListingPage from '../../Pages/ListingPage/ListingPage'
 
 
 function AllRoutes() {
@@ -18,7 +19,7 @@ function AllRoutes() {
         {/* <Route path='land' */}
         <Route path='/landing' element={<LandingPage/>}/>
         <Route path='/product' element={<ProductPage/>}/>
-
+        <Route path='/shop' element={<ListingPage/>}/>
         <Route path='/men' element={<LandingPage/>}/>
         <Route path='/women' element={<LandingPage/>}/>
         <Route path='/kids' element={<LandingPage/>}/>

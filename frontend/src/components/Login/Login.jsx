@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+
 import './Login.css'
 import { ReactComponent as Google } from '../Assets/Kicks/logos_google-icon.svg'
 
@@ -10,6 +12,8 @@ import { ReactComponent as ArrowFor } from '../Assets/Kicks/arrow_forward.svg'
 import { NavLink, useNavigate } from 'react-router-dom'
 function Login() {
  const navigate=useNavigate();
+ axios.defaults.withCredentials=true;
+
     const [inpval, setInpval] = useState({
         email: "",
         password: ""
@@ -27,31 +31,47 @@ function Login() {
     }
 
 
-    const loginUser = (e) => {
+    const loginUser = async (e) => {
 
         e.preventDefault();
-        // console.log( e.target)
-        const getuserArr = localStorage.getItem("User");
-        console.log("get array", getuserArr);
-        const { email, password } = inpval;
-        if (getuserArr && getuserArr.length) {
-            const userdata = JSON.parse(getuserArr);
-            console.log(userdata);
-            const userlogin = userdata.filter((el, k) => {
-                return el.email === email && el.password === password;
-            });
-            if (userlogin.length === 0) {
-                alert("invalid details");
+        try {
+            const response = await axios.post('http://localhost:5000/logininfo', inpval);
+            console.log("res", response);
+            if (response.data === "success") {
+                console.log(response.data)
+                navigate('/');
             }
+           
             else {
-                alert("valid details");
-                navigate('/shop')
-                // console.log("user login successfully");
-                // history("/frontpage");
-
-
+                alert(response.data)
             }
         }
+        catch (error) {
+           
+            console.error('Error:', error);
+        }
+        // console.log( e.target)
+        // const getuserArr = localStorage.getItem("User");
+        // console.log("get array", getuserArr);
+        // const { email, password } = inpval;
+        // if (getuserArr && getuserArr.length) {
+        //     const userdata = JSON.parse(getuserArr);
+        //     console.log(userdata);
+        //     const userlogin = userdata.filter((el, k) => {
+        //         return el.email === email && el.password === password;
+        //     });
+        //     if (userlogin.length === 0) {
+        //         alert("invalid details");
+        //     }
+        //     else {
+        //         alert("valid details");
+        //         navigate('/shop')
+        //         // console.log("user login successfully");
+        //         // history("/frontpage");
+
+
+        //     }
+        // }
 
 
     }

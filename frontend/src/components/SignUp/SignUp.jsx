@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import validator from 'validator'
+import axios from 'axios'
+
 import { ReactComponent as Google } from '../Assets/Kicks/logos_google-icon.svg'
 
 import { ReactComponent as Apple } from '../Assets/Kicks/ic_baseline-apple.svg'
@@ -12,13 +14,16 @@ import { useNavigate } from 'react-router-dom'
 uuid()
 
 function SignUp() {
-const navigate=useNavigate();
+    const navigate = useNavigate();
+    const [role, setRole] = useState('User');
+
     const [input, setinput] = useState({
         firstname: "",
         lastname: "",
         email: "",
+        // role:"",
         password: "",
-        id: ""
+        // id: ""
     })
     const [errorMessage, setErrorMessage] = useState('')
     const getdata = (e) => {
@@ -30,27 +35,46 @@ const navigate=useNavigate();
 
     }
 
-    const addData = (e) => {
+    const addData = async (e) => {
         console.log("adddata")
         e.preventDefault();
-        const id = uuid();
+        // const id = uuid();
         const { firstname, lastname, email, password } = input;
-        input.id = id;
-        console.log(input);
+        // input.id = id;
+        const data = { ...input, role: role }
+        console.log(data);
+
         if (validator.isStrongPassword(password, {
             minLength: 8, minLowercase: 1,
             minUppercase: 1, minNumbers: 1, minSymbols: 1
         })) {
-            setErrorMessage('Is Strong Password')
-            let data = [];
-            data.push(input);
-            let prevuser = JSON.parse(localStorage.getItem("User"));
-            if (prevuser) data = [...prevuser, ...data]
-            console.log(data)
-            localStorage.setItem("User", JSON.stringify(data));
-            setErrorMessage('')
-            alert('Successful SignIn')
-            navigate('/login')
+            // setErrorMessage('Is Strong Password')
+            // let data = [];
+            // data.push(input);
+            // let prevuser = JSON.parse(localStorage.getItem("User"));
+            // if (prevuser) data = [...prevuser, ...data]
+            // console.log(data)
+            // localStorage.setItem("User", JSON.stringify(data));
+            // setErrorMessage('')
+            // alert('Successful SignIn')
+            // navigate('/login')
+            try {
+                setErrorMessage('Is Strong Password')
+                const response = await axios.post('http://localhost:5000/usersinfo', data);
+                console.log("res", response);
+                if (response.status === 200) {
+                    console.log(response.data)
+                    setErrorMessage('')
+                    alert('Successful SignIn')
+                    navigate('/login');
+                }
+
+            }
+            catch (error) {
+                alert(error)
+                console.error('Error:', error);
+
+            }
 
         } else {
             setErrorMessage('Is Not Strong Password')
@@ -93,6 +117,15 @@ const navigate=useNavigate();
 
                     </div>
                 </div>
+                <label for="role">Choose a car:</label>
+
+                <select name="role" id="role" onChange={(e) => {
+                    setRole(e.target.value);
+                    console.log(role);
+                }}>
+                    <option value="User">User</option>
+                    <option value="Admin">Admin</option>
+                </select>
                 <div className="login-details">
                     <div className="log-txt">Login Details</div>
                     <input type="email" name="email" required id="" placeholder='Email' onChange={getdata} />

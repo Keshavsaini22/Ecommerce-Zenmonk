@@ -86,7 +86,7 @@ function SignUp() {
 
 
     return (
-        <form action="" method='get' onSubmit={addData}>
+        <form action=""  onSubmit={addData}>
             <div className="signup-container">
                 <div className="register">
                     <div className="line1">Register</div>
@@ -117,7 +117,7 @@ function SignUp() {
 
                     </div>
                 </div>
-                <label for="role">Choose a car:</label>
+                <label for="role">Choose a role:</label>
 
                 <select name="role" id="role" onChange={(e) => {
                     setRole(e.target.value);

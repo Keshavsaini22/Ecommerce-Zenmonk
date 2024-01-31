@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import { ReactComponent as MainImg } from '../Assets/Kicks/LandingPage/landing-page1.png'
 // import { ReactComponent as Secondary1 } from '../../components/Assets/Kicks/LandingPage/landing-page2.png'
 // import { ReactComponent as Secondary2 } from '../../components/Assets/Kicks/LandingPage/landing-page3.png'
@@ -16,7 +16,7 @@ import axios from 'axios';
 
 function LandingPage() {
   axios.defaults.withCredentials = true;
-
+const [UserData,setUserData]=useState();
 
   useEffect(() => {
     // const token = getCookie('token');

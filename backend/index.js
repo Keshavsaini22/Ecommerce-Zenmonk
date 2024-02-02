@@ -31,7 +31,7 @@ catch (error) {
 }
 
 //middlewhere
-const authenticateJWT = (req, res, nect) => {
+const authenticateJWT = (req, res, next) => {
     const token = req.cookies.token;
 
     if (!token) {
@@ -98,7 +98,7 @@ app.post('/logout', (req, res) => {
 
 app.get('/home', authenticateJWT, async (req, res) => {
     try {
-        const userid = req.user.id;
+        const userid = req .user.id;
         const user = await UsersModel.findById(userid);
         if (!user) {
             return res.status(404).json({ error: 'user not found' });

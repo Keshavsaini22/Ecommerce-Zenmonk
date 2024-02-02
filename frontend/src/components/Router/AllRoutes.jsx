@@ -16,7 +16,7 @@ function AllRoutes() {
     <>
     <Navbar/>
     <Routes> 
-        <Route path='/' element={<LandingPage/>}/>
+        <Route path='/' element={<SignUpPage/>}/>
         {/* <Route path='land' */}
         <Route path='/landing' element={<LandingPage/>}/>
         <Route path='/product' element={<ProductPage/>}/>

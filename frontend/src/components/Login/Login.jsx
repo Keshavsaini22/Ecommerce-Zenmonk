@@ -39,7 +39,7 @@ function Login() {
             console.log("res", response);
             if (response.data === "success") {
                 console.log(response.data)
-                navigate('/');
+                navigate('/landing');
             }
            
             else {

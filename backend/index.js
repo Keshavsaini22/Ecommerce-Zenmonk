@@ -1,14 +1,23 @@
 const express = require("express")
 const mongoose = require('mongoose')
 const cors = require('cors')
+const multer = require('multer')
+
+
 
 const UsersModel = require('./models/Users')
+const ProductModel = require('./models/Product')
+
 const jwt = require('jsonwebtoken');
 var cookieParser = require('cookie-parser')
 
 
 const app = express()
 
+app.use('/uploads', express.static('uploads'))
+// const storage = multer.diskStorage({ destination: './uploads/' })
+// const upload = multer({ storage });
+const upload = multer({ dest: './uploads' })
 app.use(express.text())
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
@@ -98,7 +107,7 @@ app.post('/logout', (req, res) => {
 
 app.get('/home', authenticateJWT, async (req, res) => {
     try {
-        const userid = req .user.id;
+        const userid = req.user.id;
         const user = await UsersModel.findById(userid);
         if (!user) {
             return res.status(404).json({ error: 'user not found' });
@@ -111,6 +120,35 @@ app.get('/home', authenticateJWT, async (req, res) => {
 })
 
 
+// app.post('/upload', upload.single('images'), async (req, res) => {
+//     console.log("fnpavgijfkj", req)
+//     try {
+
+//         res.status(201).json(product)
+
+//     }
+//     catch (e) {
+//         res.status(500).json(err)
+//     }
+// })
+
+app.post('/dashboard', upload.array('images'), async (req, res) => {
+    // console.log("request di body",req.body)
+    // console.log(req.files)
+    const images = req.files.map((i) => { return i.path })
+    // console.log(images)
+    try {
+        const userId = '65c066a97524e6b59ffd6a1b'
+        const newProduct = new ProductModel({ ...req.body, userId, images: images })
+        const product = await newProduct.save()
+        console.log(product)
+        res.status(201).json(product)
+
+    }
+    catch (e) {
+        res.status(500).json(e)
+    }
+})
 
 app.listen(5000, () => {
     console.log('server at port 5000')

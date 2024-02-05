@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import LandingPage from '../../Pages/LandingPage/LandingPage'
 import ProductPage from '../../Pages/ProductPage/ProductPage'
@@ -23,51 +23,65 @@ function AllRoutes() {
       component: <SignUpPage />
     }
   ]
-  const privateRouter=[
+  const privateRouter = [
     {
-      path:"/land",
+      path: "/land",
       component: <LandingPage />
     },
     {
-      path:"/product",
+      path: "/product",
       component: <ProductPage />
     },
     {
-      path:"/shop",
+      path: "/shop",
       component: <LandingPage />
     },
     {
-      path:"/women",
+      path: "/women",
       component: <LandingPage />
     },
     {
-      path:"/men",
+      path: "/men",
       component: <LandingPage />
     },
+    // {
+    //   path: "/admin",
+    //   component: <Dashboard />
+    // },
     {
-      path:"/admin",
-      component: <AdminPage />
-    },
-    {
-      path:"/cart",
+      path: "/cart",
       component: <Cart />
     },
   ]
 
-const adminRoute=[
-  {
-    path:"/admin",
-    component: <AdminPage />
-  },
-]
+  const adminRoute = [
+    {
+      path: "/admin",
+      component: <Dashboard />
+    },
+  ]
+
+  const [user, setUser] = useState();
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  useEffect(()=>setUser(userInfo.role) )
+  // console.log(userInfo.role,"userinfo in route")
+  // setUser(userInfo.role)
 
 
   return (
     <>
-    <Navbar/>
-    <Routes> 
-        <Route path='/' element={<SignUpPage/>}/>
-        {/* <Route path='land' */}
+      <Navbar />
+      <Routes>
+        {!user && publicRouter.map((route, index) => {
+          return <Route key={index} path={route.path} element={route.component} />
+        })}
+        {user && privateRouter.map((route, index) => {
+          return <Route key={index} path={route.path} element={route.component} />
+        })}
+        {user === 'admin' && adminRoute.map((route, index) => {
+          return <Route key={index} path={route.path} element={route.component} />
+        })}
+        {/* <Route path='/' element={<SignUpPage/>}/>
         <Route path='/landing' element={<LandingPage/>}/>
         <Route path='/product' element={<ProductPage/>}/>
         <Route path='/shop' element={<ListingPage/>}/>
@@ -77,8 +91,8 @@ const adminRoute=[
         <Route path='/signup' element={<SignUpPage/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/login' element={<LoginSignup/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-    </Routes>
+        <Route path='/cart' element={<Cart/>}/> */}
+      </Routes>
     </>
   )
 }

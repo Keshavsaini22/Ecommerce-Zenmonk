@@ -89,7 +89,7 @@ app.post('/logininfo', async (req, res) => {
                     const token = jwt.sign({ ID: user._id }, 'jwt-key');
                     res.cookie('token', token, { httpOnly: true });
 
-                    res.json("success")
+                    res.status(200).json(user)
                 }
                 else {
                     res.json("the password is incorrect")

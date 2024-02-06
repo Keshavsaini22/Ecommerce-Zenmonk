@@ -11,8 +11,8 @@ import { ReactComponent as Facebook } from '../Assets/Kicks/logos_facebook.svg'
 import { ReactComponent as ArrowFor } from '../Assets/Kicks/arrow_forward.svg'
 import { NavLink, useNavigate } from 'react-router-dom'
 function Login() {
- const navigate=useNavigate();
- axios.defaults.withCredentials=true;
+    const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
 
     const [inpval, setInpval] = useState({
         email: "",
@@ -37,17 +37,18 @@ function Login() {
         try {
             const response = await axios.post('http://localhost:5000/logininfo', inpval);
             console.log("res", response);
-            if (response.data === "success") {
+            if (response.status === 200) {
                 console.log(response.data)
-                navigate('/');
+                localStorage.setItem('userInfo', JSON.stringify(response.data));
+                navigate('/land');
             }
-           
+
             else {
                 alert(response.data)
             }
         }
         catch (error) {
-           
+
             console.error('Error:', error);
         }
         // console.log( e.target)

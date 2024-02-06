@@ -15,6 +15,8 @@ function Navbar() {
         <li><NavLink to={"/shop"}>Shop </NavLink></li>
         <li ><NavLink to={"/men"}>Men </NavLink></li>
         <li><NavLink to={"/women"}>Women </NavLink></li>
+        <li><NavLink to={"/dashboard"}>Dashboard </NavLink></li>
+
       </ul>
       <div className="nav-login-cart">
       <NavLink to={"/login"}> <button >Login</button></NavLink>
